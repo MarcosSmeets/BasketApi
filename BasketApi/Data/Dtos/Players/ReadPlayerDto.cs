@@ -1,0 +1,21 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BasketApi.Data.Dtos.Players
+{
+    public class ReadPlayerDto
+    {
+        public int Id { get; set; }
+        [Required]
+        public string? Name { get; set; }
+        public int Age { get; set; }
+        public int Weight { get; set; }
+        public string? Height { get; set; }
+        public int YearsPro { get; set; }
+        public string? PlayerPicture { get; set; }
+        [Required]
+        public int JarseyNumber { get; set; }
+        public int TeamId { get; set; }
+        public int PossitionId { get; set; }
+        public int CountryId { get; set; }
+    }
+}
