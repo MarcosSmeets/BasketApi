@@ -10,6 +10,7 @@ namespace BasketApi.Models
         [Required]
         public string? TeamName { get; set; }
         public string? TeamLogo { get; set; }
-        public virtual List<Player> Players { get; set; }
+        public virtual List<Player>? Players { get; set; }
+        public virtual List<Game>? Games { get; set; }
     }
 }

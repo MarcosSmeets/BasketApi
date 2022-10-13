@@ -29,5 +29,6 @@ namespace BasketApi.Data
         public DbSet<Team> Teams { get; set; }
         public DbSet<Possition> Possitions { get; set; }
         public DbSet<Country> Countries { get; set; }
+        public DbSet<Game> Games { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BasketApi.Data.Dtos.Players;
 using BasketApi.Services;
+using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BasketApi.Controllers
@@ -38,6 +39,24 @@ namespace BasketApi.Controllers
             if (readDto != null)
                 return Ok(readDto);
             return NotFound();
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult PutPlayer(int id, [FromBody] UpdatePlayerDto playerDto)
+        {
+            Result result = _playerService.PutPlayer(id, playerDto);
+            if (result.IsFailed)
+                return NotFound();
+            return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletePlayer(int id)
+        {
+            Result result = _playerService.DeletePlayer(id);
+            if (result.IsFailed)
+                return NotFound();
+            return NoContent();
         }
     }
 }
