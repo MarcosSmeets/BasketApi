@@ -21,7 +21,7 @@ namespace BasketApi.Services
             Team team = _mapper.Map<Team>(teamDto);
             _context.Teams.Add(team);
             _context.SaveChanges();
-            return _mapper.Map<ReadTeamDto>(teamDto);
+            return _mapper.Map<ReadTeamDto>(team);
         }
 
         public ReadTeamDto GetTeamById(int id)
