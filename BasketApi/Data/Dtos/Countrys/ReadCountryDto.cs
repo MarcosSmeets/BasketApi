@@ -4,5 +4,6 @@
     {
         public int Id { get; set; }
         public string? CountryName { get; set; }
+        public object Players { get; set; }
     }
 }

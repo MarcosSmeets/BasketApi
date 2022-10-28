@@ -9,7 +9,9 @@ namespace BasketApi.Profiles
         public PossitionProfile()
         {
             CreateMap<CreatePossitionDto, Possition>();
-            CreateMap<Possition, ReadPossitionDto>();
+            CreateMap<Possition, ReadPossitionDto>()
+                .ForMember(po => po.Players,
+                opts => opts.MapFrom(po => po.Players.Select(p => new {p.Id, p.Name,p.Age, p.JarseyNumber, p.Team})));
             CreateMap<UpdatePossitionDto, Possition>();
         }
         

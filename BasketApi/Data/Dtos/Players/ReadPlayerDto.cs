@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BasketApi.Models;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace BasketApi.Data.Dtos.Players
 {
@@ -15,7 +17,10 @@ namespace BasketApi.Data.Dtos.Players
         [Required]
         public int JarseyNumber { get; set; }
         public int TeamId { get; set; }
+        public Team? Team { get; set; }
         public int PossitionId { get; set; }
+        public Possition? Possition { get; set; }
         public int CountryId { get; set; }
+        public Country? Country { get; set; }
     }
 }

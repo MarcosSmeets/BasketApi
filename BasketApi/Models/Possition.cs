@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace BasketApi.Models
 {
@@ -9,6 +10,7 @@ namespace BasketApi.Models
         public int Id { get; set; }
         [Required]
         public string? PlayerPossition { get; set; }
+        [JsonIgnore]
         public virtual List<Player>? Players { get; set; }
     }
 }

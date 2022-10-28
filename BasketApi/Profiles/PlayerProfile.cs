@@ -8,7 +8,9 @@ namespace BasketApi.Profiles
     {
         public PlayerProfile()
         {
+            CreateMap<UpdatePlayerDto, Player>();
             CreateMap<CreatePlayerDto, Player>();
+            CreateMap<Player, ReadPlayerDto>();
         }
     }
 }

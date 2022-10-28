@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BasketApi.Controllers
 {
+    [Route("[controller]")]
+    [ApiController]
     public class PossitionController : ControllerBase
     {
         private PossitionService _possitionService;

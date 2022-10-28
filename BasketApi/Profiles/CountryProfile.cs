@@ -9,7 +9,9 @@ namespace BasketApi.Profiles
         public CountryProfile()
         {
             CreateMap<CreateCountryDto, Country>();
-            CreateMap<Country, ReadCountryDto>();
+            CreateMap<Country, ReadCountryDto>()
+                .ForMember(c => c.Players,
+                opts => opts.MapFrom(c => c.Players.Select(c => new { c.Id, c.Name, c.Age, c.JarseyNumber, c.Team })));
             CreateMap<UpdateCountryDto, Country>();
         }
     }

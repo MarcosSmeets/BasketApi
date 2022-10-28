@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace BasketApi.Models
 {
@@ -10,6 +11,7 @@ namespace BasketApi.Models
         [Required]
         public string? TeamName { get; set; }
         public string? TeamLogo { get; set; }
+        [JsonIgnore]
         public virtual List<Player>? Players { get; set; }
     }
 }
